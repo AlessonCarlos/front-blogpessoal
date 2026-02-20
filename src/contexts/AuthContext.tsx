@@ -33,7 +33,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     async function handleLogin(usuarioLogin: UsuarioLogin) {
         setIsLoading(true)
         try{
-            await login(`/usuarios/login`, usuarioLogin, setUsuario)
+            await login(`/usuarios/logar`, usuarioLogin, setUsuario)
             alert("O Usuário foi autenticado com sucesso!")
         } catch (error) {
             alert("Os Dados do usuário estão inconsistentes!")
