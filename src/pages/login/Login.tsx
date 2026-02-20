@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContex } from "../../contexts/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext";
 import { useContext, useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import type { UsuarioLogin } from "../../models/UsuarioLogin";
 import { ClipLoader } from "react-spinners";
@@ -8,7 +8,7 @@ function Login() {
 
     const navigate = useNavigate();
 
-    const { usuario, handleLogin, isLoading} = useContext(AuthContex)
+    const { usuario, handleLogin, isLoading} = useContext(AuthContext)
 
     const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
         {} as UsuarioLogin
