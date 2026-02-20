@@ -3,7 +3,7 @@ import {type UsuarioLogin } from "../models/UsuarioLogin"
 import { login } from "../services/Service"
 
 
-interface AuthContexProps {
+interface AuthContextProps {
     usuario: UsuarioLogin
     handleLogout(): void
     handleLogin(usuario: UsuarioLogin): Promise<void>
@@ -14,7 +14,7 @@ interface AuthProviderProps {
     children: ReactNode
 }
 
-export const AuthContex = createContext ({} as AuthContexProps)
+export const AuthContext = createContext ({} as AuthContextProps)
 
 export function AuthProvider({ children }: AuthProviderProps) {
 
@@ -54,8 +54,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
 
     return (
-        <AuthContex.Provider value={{ usuario, handleLogin, handleLogout, isLoading}}>
+        <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading}}>
             {children}
-        </AuthContex.Provider>
+        </AuthContext.Provider>
     )
 }
